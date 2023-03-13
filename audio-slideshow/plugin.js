@@ -389,6 +389,9 @@ const initAudioSlideshow = function(Reveal){
 			document.dispatchEvent( evt );
 
 			if ( timer ) { clearTimeout( timer ); timer = null; }
+			return;
+			// Do not execute following.  See there:
+			// https://github.com/rajgoel/reveal.js-plugins/pull/148#issuecomment-1464891048
 			// preload next audio element so that it is available after slide change
 			var indices = Reveal.getIndices();
 			var nextId = "audioplayer-" + indices.h + '.' + indices.v;
